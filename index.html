@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareHome - Votre santé, notre mission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --care-blue: #1e5c9a;
+            --care-green: #8cc63f;
+            --care-light-blue: #f0f7ff;
+        }
+        .bg-care-blue { background-color: var(--care-blue); }
+        .text-care-blue { color: var(--care-blue); }
+        .bg-care-green { background-color: var(--care-green); }
+        .text-care-green { color: var(--care-green); }
+        .border-care-green { border-color: var(--care-green); }
+        .border-care-blue { border-color: var(--care-blue); }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(30, 92, 154, 0.95) 0%, rgba(140, 198, 63, 0.9) 100%);
+        }
+
+        .img-hover-zoom {
+            overflow: hidden;
+            position: relative;
+        }
+        .img-hover-zoom img {
+            transition: transform 0.5s ease;
+        }
+        .img-hover-zoom:hover img {
+            transform: scale(1.05);
+        }
+
+        .price-row:hover {
+            @apply bg-gray-50/50 transition-colors;
+        }
+
+        /* Barre de défilement personnalisée */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--care-blue);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#accueil" class="flex items-center">
+                    <img src="https://i.postimg.cc/Wz1jHq8M/Whats-App-Image-2026-02-20-at-10-34-40-AM.jpg" alt="Logo CareHome" class="h-14 w-auto object-contain rounded-lg">
+                </a>
+            </div>
+            <div class="hidden md:flex space-x-8 font-semibold text-gray-600">
+                <a href="#accueil" class="hover:text-care-blue transition">Accueil</a>
+                <a href="#services" class="hover:text-care-blue transition">Services</a>
+                <a href="#tarifs" class="hover:text-care-blue transition">Tarifs</a>
+                <a href="#apropos" class="hover:text-care-blue transition">À propos</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="tel:+21263399518560" class="hidden lg:block text-care-blue font-bold">
+                    <i class="fas fa-phone-alt mr-2 text-care-green"></i>+212 633 995 185
+                </a>
+                <a href="#reservation" class="bg-care-green text-white px-6 py-2 rounded-full font-bold hover:shadow-lg hover:scale-105 transition transform active:scale-95">
+                    Réserver
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <div class="absolute inset-0 bg-[radial-gradient(#1e5c9a_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+            <div class="animate-fade-in-up">
+                <span class="inline-block bg-care-blue/10 text-care-blue px-4 py-1 rounded-full text-sm font-bold mb-6 tracking-wide uppercase">Santé à domicile au Maroc</span>
+                <h1 class="text-5xl md:text-7xl font-black text-care-blue mb-6 leading-[1.1]">
+                    Votre santé, <br><span class="text-care-green">notre mission.</span>
+                </h1>
+                <p class="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
+                    Plateforme de mise en relation pour personnes âgées et à mobilité réduite. Accédez à des professionnels certifiés en un clic.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#reservation" class="bg-care-blue text-white px-8 py-4 rounded-2xl text-center font-bold text-lg hover:bg-opacity-90 transition-all shadow-xl shadow-blue-900/20">
+                        Prendre rendez-vous
+                    </a>
+                    <a href="tel:+21263399518560" class="bg-white border-2 border-gray-200 text-care-blue px-8 py-4 rounded-2xl text-center font-bold text-lg hover:border-care-blue transition-all flex items-center justify-center">
+                        <i class="fas fa-phone-alt mr-2"></i> Nous appeler
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative hidden md:block">
+                <div class="relative z-10 rounded-[3rem] shadow-2xl border-[12px] border-white overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-700 aspect-[4/5] bg-care-blue">
+                    <div class="absolute inset-0 hero-gradient flex items-center justify-center text-white p-12 text-center">
+                         <div>
+                            <i class="fas fa-user-nurse text-8xl mb-6 opacity-50"></i>
+                            <h3 class="text-3xl font-bold mb-2">Soins d'Excellence</h3>
+                            <p class="text-lg opacity-80">Nos infirmiers se déplacent chez vous 24h/7j</p>
+                         </div>
+                    </div>
+                </div>
+                <!-- Carte flottante -->
+                <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-2xl border-b-8 border-care-green z-20 animate-bounce" style="animation-duration: 3s;">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-care-green/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-check text-care-green text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-care-blue font-black text-xl">Profils Certifiés</p>
+                            <p class="text-sm text-gray-500 font-medium">Vérification rigoureuse</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi CareHome -->
+    <section id="apropos" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="img-hover-zoom rounded-[2rem] shadow-2xl overflow-hidden aspect-video bg-white relative">
+                    <div class="absolute inset-0 flex items-center justify-center bg-gray-100 text-care-blue/10">
+                         <i class="fas fa-hand-holding-medical text-9xl"></i>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <div class="inline-block p-3 bg-care-green/10 rounded-2xl">
+                        <i class="fas fa-star text-care-green text-2xl"></i>
+                    </div>
+                    <h2 class="text-4xl font-black text-care-blue leading-tight">Pourquoi faire confiance à <span class="text-care-green">CareHome</span> ?</h2>
+                    <p class="text-lg text-gray-600 leading-relaxed">
+                        Nous digitalisons le parcours de soin pour offrir une expérience humaine et sécurisée directement dans le confort de votre foyer.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-6 rounded-2xl bg-white shadow-sm border-l-4 border-care-green group hover:bg-care-blue hover:text-white transition-all duration-300">
+                            <h4 class="font-bold uppercase text-sm mb-2 group-hover:text-care-green transition">Confiance</h4>
+                            <p class="text-xs opacity-70 italic group-hover:text-white">Validation systématique des diplômes.</p>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-white shadow-sm border-l-4 border-care-green group hover:bg-care-blue hover:text-white transition-all duration-300">
+                            <h4 class="font-bold uppercase text-sm mb-2 group-hover:text-care-green transition">Réactivité</h4>
+                            <p class="text-xs opacity-70 italic group-hover:text-white">Intervention programmée rapidement.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl font-black text-care-blue mb-4">Une offre complète de soins</h2>
+                <p class="text-gray-500 text-lg">Nous couvrons l'ensemble des besoins médicaux directement chez vous.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
+                        <i class="fas fa-user-md text-3xl text-care-green group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-care-blue mb-3">Médecins</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Consultations de médecine générale et spécialisée.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
+                        <i class="fas fa-syringe text-3xl text-care-green group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-care-blue mb-3">Infirmiers</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Injections, pansements et perfusions complexes.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
+                        <i class="fas fa-walking text-3xl text-care-green group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-care-blue mb-3">Paramédical</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Rééducation fonctionnelle et kinésithérapie.</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
+                        <i class="fas fa-clock text-3xl text-care-green group-hover:text-white transition"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-care-blue mb-3">Assistance</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Garde malade et assistance à la vie quotidienne.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tarifs Section -->
+    <section id="tarifs" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-4 space-y-12">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black text-care-blue mb-4">Grille Tarifaire Complète</h2>
+                <p class="text-gray-600">Choisissez l'offre qui vous convient entre Standard et Premium.</p>
+            </div>
+
+            <!-- Médecins -->
+            <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100">
+                <div class="p-6 bg-care-blue text-white flex items-center justify-between">
+                    <h3 class="text-xl font-bold"><i class="fas fa-user-md mr-3"></i>Médecins à domicile</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 text-gray-500 uppercase text-[10px] tracking-widest">
+                            <tr>
+                                <th class="py-4 px-8">Service</th>
+                                <th class="py-4 px-8 text-center">Standard</th>
+                                <th class="py-4 px-8 text-center">Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Médecin généraliste</td><td class="py-5 text-center text-care-blue font-black">350 MAD</td><td class="py-5 text-center text-care-green font-black">650 MAD</td></tr>
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Médecin spécialiste</td><td class="py-5 text-center text-care-blue font-black">600 MAD</td><td class="py-5 text-center text-care-green font-black">1 050 MAD</td></tr>
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700 text-red-600">Visite urgente</td><td class="py-5 text-center text-care-blue font-black">550 MAD</td><td class="py-5 text-center text-care-green font-black">950 MAD</td></tr>
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Visite de suivi</td><td class="py-5 text-center text-care-blue font-black">300 MAD</td><td class="py-5 text-center text-care-green font-black">520 MAD</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 bg-blue-50/50 text-[10px] text-care-blue px-8"><strong>Premium inclut :</strong> délai rapide, rapport digital, coordination famille, priorité planning</div>
+            </div>
+
+            <!-- Soins Infirmiers -->
+            <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100">
+                <div class="p-6 bg-care-green text-white flex items-center justify-between">
+                    <h3 class="text-xl font-bold"><i class="fas fa-syringe mr-3"></i>Soins infirmiers</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50 text-gray-500 uppercase text-[10px] tracking-widest">
+                            <tr>
+                                <th class="py-4 px-8">Acte</th>
+                                <th class="py-4 px-8 text-center">Standard</th>
+                                <th class="py-4 px-8 text-center">Premium</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Injection</td><td class="py-5 text-center text-care-blue font-black">120 MAD</td><td class="py-5 text-center text-care-green font-black">180 MAD</td></tr>
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Pansement simple</td><td class="py-5 text-center text-care-blue font-black">160 MAD</td><td class="py-5 text-center text-care-green font-black">240 MAD</td></tr>
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Pansement complexe</td><td class="py-5 text-center text-care-blue font-black">260 MAD</td><td class="py-5 text-center text-care-green font-black">420 MAD</td></tr>
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Perfusion</td><td class="py-5 text-center text-care-blue font-black">340 MAD</td><td class="py-5 text-center text-care-green font-black">520 MAD</td></tr>
+                            <tr class="price-row"><td class="py-5 px-8 font-bold text-gray-700">Surveillance</td><td class="py-5 text-center text-care-blue font-black">150 MAD</td><td class="py-5 text-center text-care-green font-black">290 MAD</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-4 bg-green-50/50 text-[10px] text-gray-600 px-8"><strong>Premium inclut :</strong> matériel premium, temps prolongé, compte rendu numérique</div>
+            </div>
+
+            <!-- Paramédicaux & Assistance -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100">
+                    <div class="p-6 bg-gray-800 text-white"><h3 class="text-xl font-bold">Paramédicaux</h3></div>
+                    <table class="w-full text-sm">
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="price-row"><td class="p-4 px-8 font-bold">Kinésithérapie</td><td class="p-4 text-center font-black">200/340 MAD</td></tr>
+                            <tr class="price-row"><td class="p-4 px-8 font-bold">Rééducation</td><td class="p-4 text-center font-black">220/360 MAD</td></tr>
+                            <tr class="price-row"><td class="p-4 px-8 font-bold">Orthophonie</td><td class="p-4 text-center font-black">250/390 MAD</td></tr>
+                            <tr class="price-row"><td class="p-4 px-8 font-bold">Nutrition</td><td class="p-4 text-center font-black">300/450 MAD</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="p-3 bg-gray-50 text-[9px] px-8 uppercase tracking-tighter text-gray-400">Premium : Bilan détaillé & Plan personnalisé</div>
+                </div>
+                <div class="bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100">
+                    <div class="p-6 bg-care-blue text-white"><h3 class="text-xl font-bold">Assistance</h3></div>
+                    <table class="w-full text-sm">
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="price-row"><td class="p-4 px-8 font-bold">Aide horaire</td><td class="p-4 text-center font-black">40/70 MAD/h</td></tr>
+                            <tr class="price-row"><td class="p-4 px-8 font-bold">Garde jour (8h)</td><td class="p-4 text-center font-black">320/580 MAD</td></tr>
+                            <tr class="price-row"><td class="p-4 px-8 font-bold">Garde nuit</td><td class="p-4 text-center font-black">380/700 MAD</td></tr>
+                            <tr class="price-row"><td class="p-4 px-8 font-bold text-care-green">Mensuel</td><td class="p-4 text-center font-black text-care-green">6.5k/11.5k MAD</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="p-3 bg-gray-50 text-[9px] px-8 uppercase tracking-tighter text-gray-400">Premium : Personnel certifié & Rapport quotidien</div>
+                </div>
+            </div>
+
+            <!-- Suppléments -->
+            <div class="max-w-3xl mx-auto bg-white rounded-[2rem] shadow-xl overflow-hidden border-2 border-red-50">
+                <div class="p-6 bg-red-500 text-white flex items-center justify-between">
+                    <h3 class="text-xl font-bold">Suppléments applicables</h3>
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="grid md:grid-cols-2">
+                    <div class="p-6 border-b md:border-b-0 md:border-r border-gray-100">
+                        <p class="text-xs uppercase font-bold text-gray-400 mb-4 tracking-widest">Temps & Horaires</p>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between text-sm"><span class="font-bold">Nuit</span> <span class="text-red-500 font-black">+25% à +40%</span></li>
+                            <li class="flex justify-between text-sm"><span class="font-bold">Week-end</span> <span class="text-red-500 font-black">+20% à +30%</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-xs uppercase font-bold text-gray-400 mb-4 tracking-widest">Urgence & Zone</p>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between text-sm"><span class="font-bold">Urgence</span> <span class="text-red-500 font-black">+35% à +60%</span></li>
+                            <li class="flex justify-between text-sm"><span class="font-bold">Zone éloignée</span> <span class="text-red-500 font-black">+60 à +120 MAD</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Form -->
+    <section id="reservation" class="py-24 bg-care-blue">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-white rounded-[3rem] shadow-2xl overflow-hidden flex flex-col lg:flex-row">
+                <div class="lg:w-2/5 bg-care-green p-12 text-white">
+                    <h3 class="text-4xl font-black mb-6">Un soin urgent ?</h3>
+                    <p class="mb-10 text-lg opacity-90">Mobilisés 24h/24 pour votre santé.</p>
+                    <div class="space-y-6">
+                        <a href="tel:+21263399518560" class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center"><i class="fas fa-phone-alt"></i></div>
+                            <span class="text-xl font-bold">+212 633 995 185</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:w-3/5 p-12">
+                    <form class="space-y-6" onsubmit="event.preventDefault();">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Nom complet" class="w-full p-4 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-care-blue outline-none">
+                            <input type="tel" placeholder="Téléphone" class="w-full p-4 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-care-blue outline-none">
+                        </div>
+                        <select class="w-full p-4 bg-gray-50 rounded-2xl border-2 border-transparent focus:border-care-blue outline-none">
+                            <option>Sélectionnez un service</option>
+                            <option>Médecin</option>
+                            <option>Infirmier</option>
+                            <option>Kinésithérapeute</option>
+                            <option>Garde malade</option>
+                        </select>
+                        <button class="w-full bg-care-blue text-white py-5 rounded-2xl font-black text-xl shadow-lg">Réserver maintenant</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center mb-8">
+                <img src="https://i.postimg.cc/Wz1jHq8M/Whats-App-Image-2026-02-20-at-10-34-40-AM.jpg" alt="CareHome Logo" class="h-20 w-auto rounded-lg filter grayscale opacity-50">
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://www.tiktok.com/@care.home77?_r=1&_t=ZS-944o0hjJuQE" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300">
+                    <i class="fab fa-tiktok text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:text-white transition-all duration-300">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+            </div>
+            <p class="text-[10px] uppercase tracking-widest">&copy; 2026 CareHome Maroc. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Call Button -->
+    <div class="md:hidden fixed bottom-6 right-6 z-50">
+        <a href="tel:+21263399518560" class="bg-care-green text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl animate-bounce">
+            <i class="fas fa-phone-alt text-2xl"></i>
+        </a>
+    </div>
+
+</body>
+</html>
