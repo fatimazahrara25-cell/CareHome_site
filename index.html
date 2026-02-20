@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareHome - Votre santé, notre mission</title>
+    
+    <!-- SEO & Meta Tags -->
+    <title>CareHome | Soins infirmiers et services médicaux à domicile au Maroc</title>
+    <meta name="description" content="CareHome offre des soins médicaux à domicile de qualité au Maroc : infirmiers certifiés, médecins, kinésithérapie et garde-malade 24h/7j.">
+    <meta name="keywords" content="soins à domicile Maroc, infirmier à domicile, médecin à domicile, garde malade, kinésithérapie, santé Maroc, CareHome">
+    <meta name="author" content="CareHome">
+    
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:title" content="CareHome - Votre santé, notre mission">
+    <meta property="og:description" content="Profitez de soins professionnels chez vous avec nos experts certifiés partout au Maroc.">
+    <meta property="og:image" content="https://i.postimg.cc/Wz1jHq8M/Whats-App-Image-2026-02-20-at-10-34-40-AM.jpg">
+    <meta property="og:url" content="https://carehome.ma">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -20,7 +32,7 @@
         .border-care-blue { border-color: var(--care-blue); }
         
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(30, 92, 154, 0.95) 0%, rgba(140, 198, 63, 0.9) 100%);
+            background: linear-gradient(135deg, rgba(30, 92, 154, 0.85) 0%, rgba(140, 198, 63, 0.8) 100%);
         }
 
         .img-hover-zoom {
@@ -35,10 +47,10 @@
         }
 
         .price-row:hover {
-            @apply bg-gray-50/50 transition-colors;
+            background-color: rgba(249, 250, 251, 0.5);
+            transition: background-color 0.2s;
         }
 
-        /* Barre de défilement personnalisée */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -63,9 +75,9 @@
             </div>
             <div class="hidden md:flex space-x-8 font-semibold text-gray-600">
                 <a href="#accueil" class="hover:text-care-blue transition">Accueil</a>
+                <a href="#apropos" class="hover:text-care-blue transition">À propos</a>
                 <a href="#services" class="hover:text-care-blue transition">Services</a>
                 <a href="#tarifs" class="hover:text-care-blue transition">Tarifs</a>
-                <a href="#apropos" class="hover:text-care-blue transition">À propos</a>
             </div>
             <div class="flex items-center space-x-4">
                 <a href="tel:+21263399518560" class="hidden lg:block text-care-blue font-bold">
@@ -104,16 +116,16 @@
             </div>
             
             <div class="relative hidden md:block">
-                <div class="relative z-10 rounded-[3rem] shadow-2xl border-[12px] border-white overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-700 aspect-[4/5] bg-care-blue">
-                    <div class="absolute inset-0 hero-gradient flex items-center justify-center text-white p-12 text-center">
+                <div class="relative z-10 rounded-[3rem] shadow-2xl border-[12px] border-white overflow-hidden transform rotate-3 hover:rotate-0 transition-all duration-700 aspect-[4/5]">
+                    <img src="https://img.freepik.com/free-photo/doctor-taking-care-senior-woman_23-2148962368.jpg" alt="Soins à domicile" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 hero-gradient flex items-end p-12 text-white">
                          <div>
-                            <i class="fas fa-user-nurse text-8xl mb-6 opacity-50"></i>
+                            <i class="fas fa-user-nurse text-5xl mb-4 opacity-80"></i>
                             <h3 class="text-3xl font-bold mb-2">Soins d'Excellence</h3>
-                            <p class="text-lg opacity-80">Nos infirmiers se déplacent chez vous 24h/7j</p>
+                            <p class="text-lg opacity-90 font-medium">Nos infirmiers se déplacent chez vous 24h/7j</p>
                          </div>
                     </div>
                 </div>
-                <!-- Carte flottante -->
                 <div class="absolute -bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-2xl border-b-8 border-care-green z-20 animate-bounce" style="animation-duration: 3s;">
                     <div class="flex items-center space-x-4">
                         <div class="w-12 h-12 bg-care-green/20 rounded-full flex items-center justify-center">
@@ -129,34 +141,14 @@
         </div>
     </section>
 
-    <!-- Pourquoi CareHome -->
-    <section id="apropos" class="py-24 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="img-hover-zoom rounded-[2rem] shadow-2xl overflow-hidden aspect-video bg-white relative">
-                    <div class="absolute inset-0 flex items-center justify-center bg-gray-100 text-care-blue/10">
-                         <i class="fas fa-hand-holding-medical text-9xl"></i>
-                    </div>
-                </div>
-                <div class="space-y-8">
-                    <div class="inline-block p-3 bg-care-green/10 rounded-2xl">
-                        <i class="fas fa-star text-care-green text-2xl"></i>
-                    </div>
-                    <h2 class="text-4xl font-black text-care-blue leading-tight">Pourquoi faire confiance à <span class="text-care-green">CareHome</span> ?</h2>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Nous digitalisons le parcours de soin pour offrir une expérience humaine et sécurisée directement dans le confort de votre foyer.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-6 rounded-2xl bg-white shadow-sm border-l-4 border-care-green group hover:bg-care-blue hover:text-white transition-all duration-300">
-                            <h4 class="font-bold uppercase text-sm mb-2 group-hover:text-care-green transition">Confiance</h4>
-                            <p class="text-xs opacity-70 italic group-hover:text-white">Validation systématique des diplômes.</p>
-                        </div>
-                        <div class="p-6 rounded-2xl bg-white shadow-sm border-l-4 border-care-green group hover:bg-care-blue hover:text-white transition-all duration-300">
-                            <h4 class="font-bold uppercase text-sm mb-2 group-hover:text-care-green transition">Réactivité</h4>
-                            <p class="text-xs opacity-70 italic group-hover:text-white">Intervention programmée rapidement.</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- À propos -->
+    <section id="apropos" class="py-16 bg-care-light-blue border-y border-care-blue/5">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black text-care-blue mb-6">À propos de CareHome</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
+                CareHome est une plateforme marocaine dédiée aux soins médicaux et paramédicaux à domicile, alliant technologie et expertise humaine.<br>
+                Nous simplifions l'accès à des infirmiers et médecins certifiés pour garantir confort et sécurité aux personnes âgées ou dépendantes.<br>
+                Notre engagement est d'offrir une assistance réactive et personnalisée, disponible 24h/24 dans toutes les régions du Royaume.
             </div>
         </div>
     </section>
@@ -169,33 +161,64 @@
                 <p class="text-gray-500 text-lg">Nous couvrons l'ensemble des besoins médicaux directement chez vous.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
-                        <i class="fas fa-user-md text-3xl text-care-green group-hover:text-white transition"></i>
+                <div class="bg-gray-50 rounded-[2rem] overflow-hidden border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <img src="https://img.freepik.com/free-photo/medium-shot-nurse-checking-man_23-2148940051.jpg" alt="Médecin" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-care-blue rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-green transition">
+                            <i class="fas fa-user-md text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-care-blue mb-3">Médecins</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Consultations de médecine générale et spécialisée à domicile.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-care-blue mb-3">Médecins</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Consultations de médecine générale et spécialisée.</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
-                        <i class="fas fa-syringe text-3xl text-care-green group-hover:text-white transition"></i>
+                <div class="bg-gray-50 rounded-[2rem] overflow-hidden border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <img src="https://img.freepik.com/free-photo/old-man-nursing-home-helped-by-female-doctor-take-his-medicine_482257-22857.jpg" alt="Infirmiers" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-care-blue rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-green transition">
+                            <i class="fas fa-syringe text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-care-blue mb-3">Infirmiers</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Injections, pansements et perfusions complexes avec suivi.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-care-blue mb-3">Infirmiers</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Injections, pansements et perfusions complexes.</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
-                        <i class="fas fa-walking text-3xl text-care-green group-hover:text-white transition"></i>
+                <div class="bg-gray-50 rounded-[2rem] overflow-hidden border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <img src="https://img.freepik.com/free-photo/young-nurse-doing-physiotherapy-treatment-nursing-home-with-senior-man-using-dumbbells_482257-45267.jpg" alt="Kinésithérapie" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-care-blue rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-green transition">
+                            <i class="fas fa-walking text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-care-blue mb-3">Paramédical</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Rééducation fonctionnelle et séances de kinésithérapie.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-care-blue mb-3">Paramédical</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Rééducation fonctionnelle et kinésithérapie.</p>
                 </div>
-                <div class="bg-gray-50 p-8 rounded-[2rem] border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-blue">
-                        <i class="fas fa-clock text-3xl text-care-green group-hover:text-white transition"></i>
+                <div class="bg-gray-50 rounded-[2rem] overflow-hidden border-b-4 border-transparent hover:border-care-blue hover:bg-white hover:shadow-2xl transition-all duration-300 group">
+                    <img src="https://img.freepik.com/free-photo/nurse-talking-old-man-sitting-black-sofa_23-2148238993.jpg" alt="Assistance" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="p-8">
+                        <div class="w-12 h-12 bg-care-blue rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-care-green transition">
+                            <i class="fas fa-clock text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-care-blue mb-3">Assistance</h3>
+                        <p class="text-gray-500 text-sm leading-relaxed">Garde malade et assistance humaine 24h/24 et 7j/7.</p>
                     </div>
-                    <h3 class="text-xl font-bold text-care-blue mb-3">Assistance</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Garde malade et assistance à la vie quotidienne.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Visuelle Intermédiaire -->
+    <section class="pb-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="bg-care-light-blue rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-12 shadow-inner">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-black text-care-blue mb-6">Un accompagnement humain avant tout</h2>
+                    <p class="text-gray-600 mb-6 text-lg">Nos professionnels ne se contentent pas de prodiguer des soins, ils apportent une présence rassurante et une écoute attentive aux patients.</p>
+                    <div class="flex items-center space-x-2 text-care-green font-bold">
+                        <i class="fas fa-heart"></i>
+                        <span>Bienveillance & Écoute</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://img.freepik.com/free-photo/male-health-visitor-nursing-home-talking-with-retired-old-woman-while-sitting-couch-old-woman-with-crutches_482257-45110.jpg" alt="Soutien moral" class="w-full h-80 object-cover">
                 </div>
             </div>
         </div>
@@ -360,26 +383,22 @@
     <footer class="bg-gray-900 text-gray-400 py-16">
         <div class="container mx-auto px-4 text-center">
             <div class="flex justify-center mb-8">
-                <img src="https://i.postimg.cc/Wz1jHq8M/Whats-App-Image-2026-02-20-at-10-34-40-AM.jpg" alt="CareHome Logo" class="h-20 w-auto rounded-lg filter grayscale opacity-50">
+                <img src="https://i.postimg.cc/Wz1jHq8M/Whats-App-Image-2026-02-20-at-10-34-40-AM.jpg" alt="CareHome Logo" class="h-20 w-auto rounded-lg filter brightness-90">
             </div>
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="https://www.tiktok.com/@care.home77?_r=1&_t=ZS-944o0hjJuQE" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300">
                     <i class="fab fa-tiktok text-xl"></i>
                 </a>
-                <a href="https://www.instagram.com/_care_home_?igsh=MTR5ZGU1aGlkMWkxbw==" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:text-white transition-all duration-300">
+                <a href="https://www.instagram.com/_care_home_?igsh=MTR5ZGU1aGlkMWkxbw==" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-gradient-to-tr from-yellow-500 to-purple-600 hover:text-white transition-all duration-300">
                     <i class="fab fa-instagram text-xl"></i>
                 </a>
+                <a href="https://wa.me/212699855133" target="_blank" class="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all duration-300">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                </a>
             </div>
-            <p class="text-[10px] uppercase tracking-widest">&copy; 2026 CareHome Maroc. Tous droits réservés.</p>
+            <p class="text-sm">© 2024 CareHome Maroc. Tous droits réservés.</p>
         </div>
     </footer>
-
-    <!-- Mobile Call Button -->
-    <div class="md:hidden fixed bottom-6 right-6 z-50">
-        <a href="tel:+21263399518560" class="bg-care-green text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl animate-bounce">
-            <i class="fas fa-phone-alt text-2xl"></i>
-        </a>
-    </div>
 
 </body>
 </html>
